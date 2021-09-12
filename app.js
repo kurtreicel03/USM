@@ -1,6 +1,6 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
-const mysql = require('mysql');
+const path = require('path');
 const app = express();
 
 // PARSER MIDDLEWARE
@@ -11,11 +11,17 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // SETTING TEMPLATE
-app.engine('hbs', exphbs({ extname: '.hbs' }));
+app.engine(
+  'hbs',
+  exphbs({
+    extname: '.hbs',
+    partialsDir: path.join(__dirname, 'views/partials'),
+  })
+);
 app.set('view engine', 'hbs');
 
-app.get('/', (req, res) => {
-  res.render('index');
-});
+const userRoutes = require('./routes/user');
+
+app.use('/', userRoutes);
 
 module.exports = app;

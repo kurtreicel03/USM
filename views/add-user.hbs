@@ -1,0 +1,56 @@
+<nav aria-label='breadcrumb'>
+  <ol class='breadcrumb'>
+    <li class='breadcrumb-item'><a href='/'>Home</a></li>
+    <li class='breadcrumb-item active' aria-current='page'>New User</li>
+  </ol>
+</nav>
+
+<form class='row g-3 needs-validation' method='POST' action='/users' novalidate>
+
+  <div class='col-6'>
+    <div class='form-floating mb-3'>
+      <input type='text' class='form-control' id='first_name' name='first_name' placeholder='First Name' />
+      <label for='first_name'>First Name</label>
+    </div>
+  </div>
+
+  <div class='col-6'>
+    <div class='form-floating mb-3'>
+      <input type='text' class='form-control' id='last_name' name='last_name' placeholder='Last Name' />
+      <label for='last_name'>Last Name</label>
+    </div>
+  </div>
+
+  <div class='col-6'>
+    <div class='form-floating mb-3'>
+      <input type='email' class='form-control' id='email' name='email' placeholder='email@example.com' />
+      <label for='email'>Email address</label>
+    </div>
+  </div>
+
+  <div class='col-6'>
+    <div class='form-floating mb-3'>
+      <input type='text' class='form-control' id='phone' name='phone' placeholder='####-####-###' />
+      <label for='phone'>Phone #</label>
+    </div>
+  </div>
+
+  <div class='col-12'>
+    <div class='form-floating mb-3'>
+      <input
+        type='text'
+        class='form-control comment'
+        id='comment'
+        name='comment'
+        placeholder='Comment'
+        style='height: 200px;'
+      />
+      <label for='comment'>Comment</label>
+    </div>
+  </div>
+
+  <div class='col-12 d-grid'>
+    <button type='submit' class='btn btn-primary'>Submit</button>
+  </div>
+
+</form>
