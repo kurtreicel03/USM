@@ -1,3 +1,10 @@
+{{#if removed}}
+  <div class='alert alert-success alert-dismissable fade show' role='alert'>
+    {{removed}}!
+    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+  </div>
+{{/if}}
+
 <div class='row'>
   <div class='col-6'>
     <h1>Users</h1>
@@ -6,35 +13,43 @@
     <a href='/users' type='button' class='btn btn-primary align-self-center'>+ add user</a>
   </div>
 </div>
-<table class='table table-hover table-bordered'>
-  <thead>
-    <tr>
-      <th scope='col'>#</th>
-      <th scope='col'>First Name</th>
-      <th scope='col'>Last Name</th>
-      <th scope='col'>Email</th>
-      <th scope='col'>Phone #</th>
-      <th scope='col'>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each users}}
-      <tr>
-        <th scope='row'>{{id}}</th>
-        <td>{{first_name}}</td>
-        <td>{{last_name}}</td>
-        <td>{{email}}</td>
-        <td>{{phone}}</td>
-        <td>
-          <a href='' class='btn btn-light btn-small'><i class='bi bi-eye'></i>
-            View</a>
-          <a href='' class='btn btn-light btn-small'><i class='bi bi-pencil'></i>
-            Edit</a>
-          <a href='' class='btn btn-light btn-small'><i class='bi bi-person-x'></i>
-            Delete</a>
-        </td>
 
+{{#if users}}
+  <table class='table table-hover table-bordered'>
+    <thead>
+      <tr>
+        <th scope='col'>#</th>
+        <th scope='col'>First Name</th>
+        <th scope='col'>Last Name</th>
+        <th scope='col'>Email</th>
+        <th scope='col'>Phone #</th>
+        <th scope='col'>Action</th>
       </tr>
-    {{/each}}
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      {{#each users}}
+        <tr>
+          <th scope='row'>{{id}}</th>
+          <td>{{first_name}}</td>
+          <td>{{last_name}}</td>
+          <td>{{email}}</td>
+          <td>{{phone}}</td>
+          <td>
+            <a href='/users/{{id}}' class='btn btn-light btn-small'><i class='bi bi-eye'></i>
+              View</a>
+            <a href='/users/edit/{{id}}' class='btn btn-light btn-small'><i class='bi bi-pencil'></i>
+              Edit</a>
+            <a href='/users/delete/{{id}}' class='btn btn-light btn-small'><i class='bi bi-person-x'></i>
+              Delete</a>
+          </td>
+
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <div class='container text-center mt-5'>
+    <h1>No User Records Found!</h1>
+  </div>
+
+{{/if}}

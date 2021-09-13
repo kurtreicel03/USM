@@ -1,0 +1,66 @@
+<div class='col-6'>
+  <div class='form-floating mb-3'>
+    <input
+      type='text'
+      class='form-control'
+      id='first_name'
+      name='first_name'
+      placeholder='First Name'
+      value='{{first_name}}'
+    />
+    <label for='first_name'>First Name</label>
+  </div>
+</div>
+
+<div class='col-6'>
+  <div class='form-floating mb-3'>
+    <input
+      type='text'
+      class='form-control'
+      id='last_name'
+      name='last_name'
+      placeholder='Last Name'
+      value='{{last_name}}'
+    />
+    <label for='last_name'>Last Name</label>
+  </div>
+</div>
+
+<div class='col-6'>
+  <div class='form-floating mb-3'>
+    <input
+      type='email'
+      class='form-control'
+      id='email'
+      name='email'
+      placeholder='email@example.com'
+      value='{{email}}'
+    />
+    <label for='email'>Email address</label>
+  </div>
+</div>
+
+<div class='col-6'>
+  <div class='form-floating mb-3'>
+    <input type='text' class='form-control' id='phone' name='phone' placeholder='####-####-###' value='{{phone}}' />
+    <label for='phone'>Phone #</label>
+  </div>
+</div>
+
+<div class='col-12'>
+  <div class='form-floating mb-3'>
+    <textarea
+      type='text'
+      class='form-control comment'
+      id='comment'
+      name='comment'
+      placeholder='Comment'
+      style='height: 200px;'
+    >{{comment}}</textarea>
+    <label for='comment'>Comment</label>
+  </div>
+</div>
+
+<div class='col-12 d-grid'>
+  <button type='submit' class='btn btn-primary'>Submit</button>
+</div>

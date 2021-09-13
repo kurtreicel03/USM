@@ -1,6 +1,6 @@
-{{#if alert}}
+{{#if updated}}
   <div class='alert alert-success alert-dismissable fade show' role='alert'>
-    {{alert}}
+    {{updated}}!
     <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
   </div>
 {{/if}}
@@ -12,9 +12,8 @@
   </ol>
 </nav>
 
-<form class='row g-3 needs-validation' method='POST' action='/users' novalidate>
-
+{{#each rows}}
+<form class='row g-3 needs-validation' method='POST' action='/users/edit/{{id}}' novalidate>
   {{> user-form}}
- 
-
 </form>
+{{/each}}  
